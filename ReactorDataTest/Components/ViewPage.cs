@@ -5,6 +5,14 @@ using System.Text;
 
 namespace ReactorDataTest.Components
 {
+    [Model]
+    public partial class Todo
+    {
+        public required string Id { get; set; }
+        public required string Name { get; set; }
+        public List<string> Datas = new ();
+    }
+
     internal class ViewPageState
     {
         public IQuery<Todo> Todos { get; set; }

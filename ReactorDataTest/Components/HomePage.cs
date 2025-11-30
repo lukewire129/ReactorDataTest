@@ -2,13 +2,6 @@
 
 namespace ReactorDataTest.Components
 {
-    [Model]
-    public partial class Todo
-    {
-        public required string Id { get; set; }
-        public required string Name { get; set; }
-        public List<string> Datas = new ();
-    }
 
     internal class HomePageState
     {
@@ -28,10 +21,9 @@ namespace ReactorDataTest.Components
                             new ViewPage()
                                 .IsVisible(!State.IsViewVisible),
                             new NewPage()
-                                .OnAdd(()=>SetState (s => s.IsViewVisible = false))
                                 .IsVisible(State.IsViewVisible),
                             Button(State.IsViewVisible? "Show NewPage" : "Hide NewPage")
-                                .OnClicked(_=>SetState(s=>s.IsViewVisible = true))
+                                .OnClicked(_=>SetState(s=>s.IsViewVisible = !s.IsViewVisible))
                     )
                     .VCenter ()
                     .Spacing (25)

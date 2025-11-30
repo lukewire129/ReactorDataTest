@@ -26,8 +26,6 @@ namespace ReactorDataTest.Components
             });
 
             this.modelContext.Save ();
-
-            this._onAdd?.Invoke ();
         }
     }
 }
