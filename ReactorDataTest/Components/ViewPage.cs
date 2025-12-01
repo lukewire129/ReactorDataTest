@@ -32,7 +32,7 @@ namespace ReactorDataTest.Components
             => VStack (
                         State.Todos
                                 .Select (Views)
-                );
+                ).IsVisible(isVisible);
 
         VisualNode Views(Todo todo)
             => Grid ("auto", "*,*",
